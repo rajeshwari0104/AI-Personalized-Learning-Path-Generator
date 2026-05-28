@@ -1,0 +1,46 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; gap: 8px; }
+
+  /* Hero sections */
+  h1 { font-size: clamp(1.8rem, 6vw, 3rem) !important; }
+  h2 { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+
+  /* Cards and grids */
+  div[style*="gridTemplateColumns"] { grid-template-columns: 1fr !important; }
+  div[style*="display: flex"][style*="gap"] { flex-wrap: wrap !important; }
+
+  /* Content padding */
+  div[style*="maxWidth: 1100"] { padding: 1rem !important; }
+  div[style*="maxWidth: 900"] { padding: 1rem !important; }
+  div[style*="maxWidth: 860"] { padding: 1rem !important; }
+
+  /* Stats row */
+  div[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Week tabs */
+  div[style*="overflowX: auto"] { gap: 6px !important; }
+}
+
+@media (max-width: 480px) {
+  div[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+  div[style*="repeat(3"] { grid-template-columns: 1fr !important; }
+}
